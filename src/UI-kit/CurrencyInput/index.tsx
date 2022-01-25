@@ -11,7 +11,7 @@ const CurrencyInput: React.FC<ComponentProps> = ({ pickerProps, inputProps }) =>
   return (
     <CurrencyInputWrapper>
       <CurrencyPicker {...pickerProps} />
-      <Input placeholder="0" {...inputProps} />
+      <Input {...inputProps} />
     </CurrencyInputWrapper>
   );
 };

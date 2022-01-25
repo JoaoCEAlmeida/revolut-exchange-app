@@ -1,3 +1,4 @@
 export interface StyledButtonProps {
-  transactionType: string
+  transactionType: string;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
 }

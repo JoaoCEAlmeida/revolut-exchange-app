@@ -1,3 +1,3 @@
 export interface ComponentProps {
-  children: React.ReactElement
+  children: React.ReactElement;
 }

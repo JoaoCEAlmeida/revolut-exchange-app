@@ -3,14 +3,14 @@ import { CurrencyPickerWrapper, Balance, CurrencyButton, Currency } from './styl
 import { ComponentProps } from './types';
 import { ChevronDownIcon } from '@heroicons/react/outline';
 
-const CurrencyPicker: React.FC<ComponentProps> = ({ currency, balance }) => {
+const CurrencyPicker: React.FC<ComponentProps> = ({ currency, balance, onClick }) => {
   return (
     <CurrencyPickerWrapper>
-      <CurrencyButton>
-        <Currency> {currency} </Currency>
+      <CurrencyButton onClick={onClick}>
+        <Currency data-testid="test-currency">{currency}</Currency>
         <ChevronDownIcon height="20px" />
       </CurrencyButton>
-      <Balance>Balance: {balance}</Balance>
+      <Balance data-testid="test-balance">Balance: {balance}</Balance>
     </CurrencyPickerWrapper>
   );
 };

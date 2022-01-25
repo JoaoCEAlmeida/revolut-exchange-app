@@ -7,13 +7,20 @@ export const InputContainer = styled.div`
 `;
 
 export const MyInput = styled.input`
-  direction: rtl;
   padding: 0;
+  text-align: right;
   background: none;
-  border: 0;
+  border-width: 0 0 0;
+  outline: 0;
+  border-color: ${(props) => props.theme.colors.primary.main};
   &:focus {
     outline: none;
     caret-color: ${(props) => props.theme.colors.primary.main};
+  }
+  ::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 `;
 

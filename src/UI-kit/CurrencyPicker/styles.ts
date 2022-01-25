@@ -5,7 +5,7 @@ export const CurrencyPickerWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const CurrencyButton = styled.button`
+export const CurrencyButton = styled.div`
   display: flex;
   align-items: center;
   width: 100%;

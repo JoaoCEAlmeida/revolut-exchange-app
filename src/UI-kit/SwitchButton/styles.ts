@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 import { StyledButtonProps } from './types';
 
-export const StyledSwitchButton = styled.button<StyledButtonProps>`
+export const StyledSwitchButton = styled.div<StyledButtonProps>`
   position: absolute;
+  align-items: center;
+  display: flex;
+  justify-content: center;
   top: 50%;
   left: 50%;
   border-radius: 50%;
@@ -15,7 +18,7 @@ export const StyledSwitchButton = styled.button<StyledButtonProps>`
 
   svg {
     transition: all 0.2s;
-    transform: ${(props) => (props.transactionType === 'BUY' ? 'rotateX(180deg)' : '')};
+    transform: ${(props) => (props.transactionType === 'Buy' ? 'rotateX(180deg)' : '')};
     color: ${(props) => props.theme.colors.primary.main};
   }
 `;
