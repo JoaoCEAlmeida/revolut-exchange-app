@@ -7,9 +7,9 @@ import Input from '../Input';
 
 import { ComponentProps } from './types';
 
-const CurrencyInput: React.FC<ComponentProps> = ({ pickerProps, inputProps }) => {
+const CurrencyInput: React.FC<ComponentProps> = ({ pickerProps, inputProps, ...rest }) => {
   return (
-    <CurrencyInputWrapper>
+    <CurrencyInputWrapper {...rest}>
       <CurrencyPicker {...pickerProps} />
       <Input {...inputProps} />
     </CurrencyInputWrapper>

@@ -27,7 +27,7 @@ export const currencySlice = createSlice({
       state,
       action: PayloadAction<{ currency: string; amount: number | null }>
     ) => {
-      const account = state.accounts.find(
+      const account = state?.accounts?.find(
         (account) => account.currency === action.payload.currency
       );
       if (account && action.payload.amount) {
@@ -39,7 +39,7 @@ export const currencySlice = createSlice({
       state,
       action: PayloadAction<{ currency: string; amount: number | null }>
     ) => {
-      const account = state.accounts.find(
+      const account = state?.accounts?.find(
         (account) => account.currency === action.payload.currency
       );
 
@@ -56,6 +56,12 @@ export const currencySlice = createSlice({
     },
     setCurrencyTo: (state, action: PayloadAction<string>) => {
       state.currencyTo = action.payload;
+    },
+    setAccounts: (
+      state,
+      action: PayloadAction<Array<{ currency: string; balance: number; id: string }>>
+    ) => {
+      state.accounts = action.payload;
     }
   }
 });
@@ -65,7 +71,8 @@ export const {
   incrementBalance,
   setCurrencyFrom,
   setCurrencyTo,
-  setTransactionType
+  setTransactionType,
+  setAccounts
 } = currencySlice.actions;
 
 export const selectTransactionType = (state: RootState) => state.currency.transactionType;

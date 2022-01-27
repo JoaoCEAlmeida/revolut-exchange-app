@@ -9,7 +9,7 @@ const useCurrencyRates = (
   currencyFrom: string,
   queryOptions?: QueryOptions
 ) => {
-  const { data, ...rest } = useQuery(
+  const { data, isLoading, ...rest } = useQuery(
     queryKey,
     () => getCurrenciesRates(`${currencyFrom},${currencyTo}`),
     queryOptions
@@ -25,6 +25,7 @@ const useCurrencyRates = (
 
   return {
     ...rest,
+    isLoading,
     currencyRate
   };
 };

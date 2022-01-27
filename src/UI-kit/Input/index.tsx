@@ -19,7 +19,7 @@ const Input: React.FC<ComponentProps> = ({
         onChange={onChange}
         {...rest}
       />
-      {error && <ErrorMessage> {error} </ErrorMessage>}
+      {error && <ErrorMessage data-testid="test-error">{error}</ErrorMessage>}
     </InputContainer>
   );
 };

@@ -1,5 +1,7 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { nanoid } from 'nanoid';
+
 import { useAppDispatch } from '../../app/hooks';
 import { setCurrencyFrom, setCurrencyTo } from '../../features/currencySlice';
 import {
@@ -69,14 +71,15 @@ const Search: React.FC = () => {
         filteredCurrency.map((account) => {
           return (
             <StyledButtonCurrency
-              key={account.id}
+              key={nanoid()}
               text={account.currency}
               onClick={selectCurrency(account.currency)}
+              data-testid="button"
             />
           );
         })
       ) : (
-        <NotFound>The searched currency is not available.</NotFound>
+        <NotFound data-testid="not-found">The searched currency is not available.</NotFound>
       )}
     </SearchWrapper>
   );
