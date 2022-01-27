@@ -2,6 +2,8 @@
 
 A currency exchange web app based on Revolut's app.
 
+Live: https://revolut-exchange-app.vercel.app/
+
 Stack:
 
 - React
